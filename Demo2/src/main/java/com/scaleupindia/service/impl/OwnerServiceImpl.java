@@ -1,15 +1,16 @@
 package com.scaleupindia.service.impl;
 
-import java.util.List;
 import java.util.Objects;
 
 import com.scaleupindia.config.PropertiesConfig;
 import com.scaleupindia.dto.OwnerDTO;
 import com.scaleupindia.exception.DuplicateOwnerException;
 import com.scaleupindia.exception.OwnerNotFoundException;
+import com.scaleupindia.owner.Owner;
 import com.scaleupindia.repository.OwnerRepository;
 import com.scaleupindia.repository.impl.OwnerRepositoryImpl;
 import com.scaleupindia.service.OwnerService;
+import com.scaleupindia.util.MapperUtil;
 
 
 public class OwnerServiceImpl implements OwnerService {
@@ -24,26 +25,27 @@ public class OwnerServiceImpl implements OwnerService {
 
 	@Override
 	public void saveOwner(OwnerDTO ownerDTO) throws DuplicateOwnerException {
-		OwnerDTO existingOwner = ownerRepository.findOwner(ownerDTO.getId()); 
+		Owner existingOwner = ownerRepository.findOwner(ownerDTO.getId());
 		if (Objects.nonNull(existingOwner)) {
 			throw new DuplicateOwnerException(
 					String.format(PROPERTIES_CONFIG.getProperty(OWNER_ALREADY_EXISTS), ownerDTO.getId()));
 		}
-		ownerRepository.saveOwner(ownerDTO);
+		Owner owner = MapperUtil.convertOwnerDtoToEntity(ownerDTO);
+		ownerRepository.saveOwner(owner);
 	}
 
 	@Override
 	public OwnerDTO findOwner(int ownerId) throws OwnerNotFoundException {
-		OwnerDTO owner = ownerRepository.findOwner(ownerId);
+		Owner owner = ownerRepository.findOwner(ownerId);
 		if (Objects.isNull(owner)) {
 			throw new OwnerNotFoundException(String.format(PROPERTIES_CONFIG.getProperty(OWNER_NOT_FOUND), ownerId));
 		}
-		return owner;
+		return MapperUtil.convertOwnerEntityToDto(owner);
 	}
 
 	@Override
 	public void updatePetDetails(int ownerId, String petName) throws OwnerNotFoundException {
-		OwnerDTO owner = ownerRepository.findOwner(ownerId);
+		Owner owner = ownerRepository.findOwner(ownerId);
 		if (Objects.isNull(owner)) {
 			throw new OwnerNotFoundException(String.format(PROPERTIES_CONFIG.getProperty(OWNER_NOT_FOUND), ownerId));
 		}
@@ -52,15 +54,10 @@ public class OwnerServiceImpl implements OwnerService {
 
 	@Override
 	public void deleteOwner(int ownerId) throws OwnerNotFoundException {
-		OwnerDTO owner = ownerRepository.findOwner(ownerId);
+		Owner owner = ownerRepository.findOwner(ownerId);
 		if (Objects.isNull(owner)) {
 			throw new OwnerNotFoundException(String.format(PROPERTIES_CONFIG.getProperty(OWNER_NOT_FOUND), ownerId));
 		}
 		ownerRepository.deleteOwner(ownerId);
-	}
-
-	@Override
-	public List<OwnerDTO> findAllOwners() {
-		return ownerRepository.findAllOwners();
 	}
 }
