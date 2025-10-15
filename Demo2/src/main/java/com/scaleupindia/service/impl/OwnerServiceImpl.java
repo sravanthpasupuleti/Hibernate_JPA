@@ -14,8 +14,8 @@ import com.scaleupindia.util.MapperUtil;
 
 
 public class OwnerServiceImpl implements OwnerService {
-	private OwnerRepository ownerRepository;
-	private static final String OWNER_ALREADY_EXISTS = "owner.already.exists";
+	private final OwnerRepository ownerRepository;
+	// private static final String OWNER_ALREADY_EXISTS = "owner.already.exists";
 	private static final String OWNER_NOT_FOUND = "owner.not.found";
 	private static final PropertiesConfig PROPERTIES_CONFIG = PropertiesConfig.getInstance();
 
@@ -25,11 +25,11 @@ public class OwnerServiceImpl implements OwnerService {
 
 	@Override
 	public void saveOwner(OwnerDTO ownerDTO) throws DuplicateOwnerException {
-		Owner existingOwner = ownerRepository.findOwner(ownerDTO.getId());
-		if (Objects.nonNull(existingOwner)) {
-			throw new DuplicateOwnerException(
-					String.format(PROPERTIES_CONFIG.getProperty(OWNER_ALREADY_EXISTS), ownerDTO.getId()));
-		}
+		// Owner existingOwner = ownerRepository.findOwner(ownerDTO.getId());
+		// if (Objects.nonNull(existingOwner)) {   //returns true if object is not null
+		// 	throw new DuplicateOwnerException(
+		// 			String.format(PROPERTIES_CONFIG.getProperty(OWNER_ALREADY_EXISTS), ownerDTO.getId()));
+		// }  //here we take primary key as a generated value so we no need to check whether the value is existed or not
 		Owner owner = MapperUtil.convertOwnerDtoToEntity(ownerDTO);
 		ownerRepository.saveOwner(owner);
 	}
@@ -37,7 +37,7 @@ public class OwnerServiceImpl implements OwnerService {
 	@Override
 	public OwnerDTO findOwner(int ownerId) throws OwnerNotFoundException {
 		Owner owner = ownerRepository.findOwner(ownerId);
-		if (Objects.isNull(owner)) {
+		if (Objects.isNull(owner)) {        //returns true if object is null
 			throw new OwnerNotFoundException(String.format(PROPERTIES_CONFIG.getProperty(OWNER_NOT_FOUND), ownerId));
 		}
 		return MapperUtil.convertOwnerEntityToDto(owner);
