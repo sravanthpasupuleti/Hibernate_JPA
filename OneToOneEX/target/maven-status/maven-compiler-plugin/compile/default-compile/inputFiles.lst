@@ -1,0 +1,15 @@
+F:\Hibernate_JPA\Demo0\src\main\java\com\scaleupindia\service\OwnerService.java
+F:\Hibernate_JPA\Demo0\src\main\java\com\scaleupindia\util\InputUtil.java
+F:\Hibernate_JPA\Demo0\src\main\java\com\scaleupindia\service\impl\OwnerServiceImpl.java
+F:\Hibernate_JPA\Demo0\src\main\java\com\scaleupindia\dto\OwnerDTO.java
+F:\Hibernate_JPA\Demo0\src\main\java\com\scaleupindia\repository\impl\OwnerRepositoryImpl.java
+F:\Hibernate_JPA\Demo0\src\main\java\com\scaleupindia\config\PropertiesConfig.java
+F:\Hibernate_JPA\Demo0\src\main\java\com\scaleupindia\exception\InternalServiceException.java
+F:\Hibernate_JPA\Demo0\src\main\java\com\scaleupindia\Demo.java
+F:\Hibernate_JPA\Demo0\src\main\java\com\scaleupindia\exception\OwnerNotFoundException.java
+F:\Hibernate_JPA\Demo0\src\main\java\com\scaleupindia\util\MapperUtil.java
+F:\Hibernate_JPA\Demo0\src\main\java\com\scaleupindia\enums\Gender.java
+F:\Hibernate_JPA\Demo0\src\main\java\com\scaleupindia\enums\PetType.java
+F:\Hibernate_JPA\Demo0\src\main\java\com\scaleupindia\exception\DuplicateOwnerException.java
+F:\Hibernate_JPA\Demo0\src\main\java\com\scaleupindia\repository\OwnerRepository.java
+F:\Hibernate_JPA\Demo0\src\main\java\com\scaleupindia\config\DatabaseConfig.java
