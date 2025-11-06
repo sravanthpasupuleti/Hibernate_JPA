@@ -1,4 +1,7 @@
-package com.scaleupindia.owner;
+package com.scaleupindia.entity;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import com.scaleupindia.enums.Gender;
 
@@ -10,16 +13,18 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
+/**
+ * @author abhishekvermaa10
+ *
+ */
 @Entity
 @Table(name = "owner_table")
 public class Owner {
-
-	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
 	private int id;
 	@Column(name = "first_name", nullable = false)
 	private String firstName;
@@ -36,19 +41,9 @@ public class Owner {
 	private String mobileNumber;
 	@Column(name = "email_id", nullable = false, unique = true)
 	private String emailId;
-
-	@OneToOne(cascade = CascadeType.ALL , optional = false)
-	@JoinColumn(name = "pet_id" , referencedColumnName = "petId" , nullable = false , unique = true)
-	private Pet pet;
-
-	public void setpet(Pet pet){
-		this.pet = pet;
-	}
-
-	public Pet getpet(){
-		return pet;
-	}
-
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "owner", orphanRemoval = true)
+	private List<Pet> petList = new ArrayList<>();
+	
 	public int getId() {
 		return id;
 	}
@@ -109,13 +104,19 @@ public class Owner {
 		this.emailId = emailId;
 	}
 
+	public List<Pet> getPetList() {
+		return petList;
+	}
+
+	public void setPetList(List<Pet> petList) {
+		this.petList = petList;
+	}
+
 	@Override
 	public String toString() {
 		return "Owner [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender
 				+ ", city=" + city + ", state=" + state + ", mobileNumber=" + mobileNumber + ", emailId=" + emailId
-				+ ", Pet " + pet + "]";
+				+ "]";
 	}
-
-
 
 }

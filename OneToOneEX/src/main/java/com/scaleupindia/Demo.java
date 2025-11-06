@@ -16,6 +16,7 @@ public class Demo {
 
 	public void run() {
 		OwnerService ownerService = new OwnerServiceImpl();
+		// PetServiceimpl PetService = new PetServiceimpl();
 		try (Scanner scanner = new Scanner(System.in)) {
 			do {
 				System.out.println("Welcome to Petistaan");
@@ -47,7 +48,7 @@ public class Demo {
 					break;
 				// case 5:
 				// 	int petId = InputUtil.acceptPetIdToOperate(scanner);
-				// 	petDTO = petServiceimpl.findpetid(petId);
+				// 	petDTO = petService.findpetid(petId);
 				// 	System.out.println("Pet has been fetched successfully.");
 				// 	System.out.println(petDTO);
 				default:

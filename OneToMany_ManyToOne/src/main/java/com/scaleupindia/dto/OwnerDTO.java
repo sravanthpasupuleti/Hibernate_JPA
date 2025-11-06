@@ -1,10 +1,15 @@
 package com.scaleupindia.dto;
 
+import java.util.List;
+import java.util.Objects;
+
 import com.scaleupindia.enums.Gender;
 
-
+/**
+ * @author abhishekvermaa10
+ *
+ */
 public class OwnerDTO {
-
 	private int id;
 	private String firstName;
 	private String lastName;
@@ -13,16 +18,7 @@ public class OwnerDTO {
 	private String state;
 	private String mobileNumber;
 	private String emailId;
-	
-	private PetDTO petDTO;
-
-	public void setpetDTO(PetDTO petDTO){
-		this.petDTO = petDTO;
-	}
-
-	public PetDTO getpetDTO(){
-		return petDTO;
-	}
+	private List<PetDTO> petDTOList;
 
 	public int getId() {
 		return id;
@@ -88,11 +84,24 @@ public class OwnerDTO {
 		this.emailId = emailId;
 	}
 
-	@Override
-	public String toString() {
-		return "OwnerDTO [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender
-				+ ", city=" + city + ", state=" + state + ", mobileNumber=" + mobileNumber + ", emailId=" + emailId
-				+ ", PetDTO " + petDTO + "]";
+	public List<PetDTO> getPetDTOList() {
+		return petDTOList;
 	}
 
+	public void setPetDTOList(List<PetDTO> petDTOList) {
+		this.petDTOList = petDTOList;
+	}
+
+	@Override
+	public String toString() {
+		if (Objects.isNull(petDTOList)) {
+			return "OwnerDTO [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender
+					+ ", city=" + city + ", state=" + state + ", mobileNumber=" + mobileNumber + ", emailId=" + emailId
+					+ "]";
+		} else {
+			return "OwnerDTO [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender
+					+ ", city=" + city + ", state=" + state + ", mobileNumber=" + mobileNumber + ", emailId=" + emailId
+					+ ", petDTOList=" + petDTOList + "]";
+		}
+	}
 }

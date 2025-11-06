@@ -70,4 +70,11 @@ public class Pet {
 	public void setPetType(PetType petType) {
 		this.petType = petType;
 	}
+
+	@Override
+	public String toString() {
+		return "Pet [petId=" + petId + ", petName=" + petName + ", petBirthDate=" + petBirthDate + ", petGender="
+				+ petGender + ", petType=" + petType + "]";
+	}
+
 }
