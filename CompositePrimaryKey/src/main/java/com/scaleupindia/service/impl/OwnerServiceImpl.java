@@ -16,7 +16,7 @@ import com.scaleupindia.util.MapperUtil;
 
 public class OwnerServiceImpl implements OwnerService {
 	private final OwnerRepository ownerRepository;
-	private static final String OWNER_ALREADY_EXISTS = "owner.already.exists";
+	private static final String OWNER_ALREADY_EXISTS = "owner.already.existsss";
 	private static final String OWNER_NOT_FOUND = "ownerpet combination.not.found";
 	private static final PropertiesConfig PROPERTIES_CONFIG = PropertiesConfig.getInstance();
 

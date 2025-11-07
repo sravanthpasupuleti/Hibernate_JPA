@@ -5,12 +5,6 @@ import java.time.LocalDate;
 import com.scaleupindia.enums.Gender;
 import com.scaleupindia.enums.PetType;
 
-// import lombok.Data;
-// import lombok.NoArgsConstructor;
-
-
-// @Data
-// @NoArgsConstructor
 public class OwnerDTO {
 	private int id;
 	private String firstName;

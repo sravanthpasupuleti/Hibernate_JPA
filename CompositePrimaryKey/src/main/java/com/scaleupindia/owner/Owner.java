@@ -12,11 +12,7 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 
 import jakarta.persistence.Table;
-// import lombok.Data;
-// import lombok.NoArgsConstructor;
 
-// @Data
-// @NoArgsConstructor
 @Entity
 @Table(name = "owner_table")
 public class Owner {
