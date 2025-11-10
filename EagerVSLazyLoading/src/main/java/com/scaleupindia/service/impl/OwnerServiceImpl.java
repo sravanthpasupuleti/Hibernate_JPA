@@ -14,7 +14,7 @@ import com.scaleupindia.util.MapperUtil;
 
 public class OwnerServiceImpl implements OwnerService {
 	private OwnerRepository ownerRepository;
-	private static final String OWNER_NOT_FOUND = "owner.not.found";
+	private static final String OWNER_NOT_FOUND = "owner.not.foundddd";
 	private static final PropertiesConfig PROPERTIES_CONFIG = PropertiesConfig.getInstance();
 
 	public OwnerServiceImpl() {
