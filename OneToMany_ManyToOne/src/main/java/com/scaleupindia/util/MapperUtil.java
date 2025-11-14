@@ -8,10 +8,7 @@ import com.scaleupindia.dto.PetDTO;
 import com.scaleupindia.entity.Owner;
 import com.scaleupindia.entity.Pet;
 
-/**
- * @author abhishekvermaa10
- *
- */
+
 public class MapperUtil {
 	private MapperUtil() {
 

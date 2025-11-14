@@ -14,10 +14,7 @@ import com.scaleupindia.repository.impl.OwnerRepositoryImpl;
 import com.scaleupindia.service.OwnerService;
 import com.scaleupindia.util.MapperUtil;
 
-/**
- * @author abhishekvermaa10
- *
- */
+
 public class OwnerServiceImpl implements OwnerService {
 	private OwnerRepository ownerRepository;
 	private static final String OWNER_NOT_FOUND = "owner.not.found";

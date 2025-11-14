@@ -17,10 +17,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
-/**
- * @author abhishekvermaa10
- *
- */
 @Entity
 @Table(name = "pet_table")
 public class Pet {

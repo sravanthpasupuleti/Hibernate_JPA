@@ -12,10 +12,7 @@ import com.scaleupindia.entity.Owner;
 import com.scaleupindia.entity.Pet;
 import com.scaleupindia.repository.OwnerRepository;
 
-/**
- * @author abhishekvermaa10
- *
- */
+
 public class OwnerRepositoryImpl implements OwnerRepository {
 	private SessionFactory sessionFactory = DatabaseConfig.getSessionFactory();
 

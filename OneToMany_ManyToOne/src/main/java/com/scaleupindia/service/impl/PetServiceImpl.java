@@ -11,10 +11,7 @@ import com.scaleupindia.repository.impl.PetRepositoryImpl;
 import com.scaleupindia.service.PetService;
 import com.scaleupindia.util.MapperUtil;
 
-/**
- * @author abhishekvermaa10
- *
- */
+
 public class PetServiceImpl implements PetService {
 	private PetRepository petRepository;
 	private static final String PET_NOT_FOUND = "pet.not.found";

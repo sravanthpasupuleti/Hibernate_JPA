@@ -3,10 +3,7 @@ package com.scaleupindia.repository;
 import com.scaleupindia.entity.Owner;
 import com.scaleupindia.entity.Pet;
 
-/**
- * @author abhishekvermaa10
- *
- */
+
 public interface OwnerRepository {
 	void saveOwner(Owner owner);
 

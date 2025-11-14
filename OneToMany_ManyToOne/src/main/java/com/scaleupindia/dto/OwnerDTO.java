@@ -5,10 +5,6 @@ import java.util.Objects;
 
 import com.scaleupindia.enums.Gender;
 
-/**
- * @author abhishekvermaa10
- *
- */
 public class OwnerDTO {
 	private int id;
 	private String firstName;

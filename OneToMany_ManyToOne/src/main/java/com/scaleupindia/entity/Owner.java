@@ -16,10 +16,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
-/**
- * @author abhishekvermaa10
- *
- */
+
 @Entity
 @Table(name = "owner_table")
 public class Owner {

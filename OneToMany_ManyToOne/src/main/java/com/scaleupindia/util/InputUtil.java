@@ -10,10 +10,7 @@ import com.scaleupindia.dto.PetDTO;
 import com.scaleupindia.enums.Gender;
 import com.scaleupindia.enums.PetType;
 
-/**
- * @author abhishekvermaa10
- *
- */
+
 public class InputUtil {
 	private InputUtil() {
 

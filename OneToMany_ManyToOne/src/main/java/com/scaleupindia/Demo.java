@@ -12,10 +12,7 @@ import com.scaleupindia.service.impl.OwnerServiceImpl;
 import com.scaleupindia.service.impl.PetServiceImpl;
 import com.scaleupindia.util.InputUtil;
 
-/**
- * @author abhishekvermaa10
- *
- */
+
 public class Demo {
 	public static void main(String[] args) {
 		Demo demo = new Demo();

@@ -7,10 +7,6 @@ import java.util.Properties;
 
 import com.scaleupindia.exception.InternalServiceException;
 
-/**
- * @author abhishekvermaa10
- *
- */
 public class PropertiesConfig {
 	private static final Properties PROPERTIES = new Properties();
 	private static final PropertiesConfig PROPERTIES_CONFIG = new PropertiesConfig();

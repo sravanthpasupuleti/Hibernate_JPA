@@ -8,10 +8,6 @@ import org.hibernate.service.ServiceRegistry;
 import com.scaleupindia.entity.Owner;
 import com.scaleupindia.entity.Pet;
 
-/**
- * @author abhishekvermaa10
- *
- */
 public class DatabaseConfig {
 	private static final SessionFactory SESSION_FACTORY = buildSessionFactory();
 

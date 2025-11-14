@@ -10,10 +10,7 @@ import com.scaleupindia.config.DatabaseConfig;
 import com.scaleupindia.entity.Pet;
 import com.scaleupindia.repository.PetRepository;
 
-/**
- * @author abhishekvermaa10
- *
- */
+
 public class PetRepositoryImpl implements PetRepository {
 	private SessionFactory sessionFactory = DatabaseConfig.getSessionFactory();
 

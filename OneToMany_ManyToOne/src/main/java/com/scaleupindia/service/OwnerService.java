@@ -5,10 +5,7 @@ import com.scaleupindia.dto.PetDTO;
 import com.scaleupindia.exception.OwnerNotFoundException;
 import com.scaleupindia.exception.PetNotFoundException;
 
-/**
- * @author abhishekvermaa10
- *
- */
+
 public interface OwnerService {
 	void saveOwner(OwnerDTO ownerDTO);
 
