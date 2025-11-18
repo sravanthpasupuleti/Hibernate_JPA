@@ -15,7 +15,7 @@ public class PetRepositoryImpl implements PetRepository {
 
 	@Override
 	public Pet findPet(int petId) {
-		String hql = "SELECT p FROM Pet p WHERE p.id = :petId";
+		String hql = "SELECT p FROM Pet p JOIN FETCH p.owner WHERE p.id = :petId";
 		try (Session session = sessionFactory.openSession()) {
 			return session.createSelectionQuery(hql, Pet.class).setParameter("petId", petId).getSingleResultOrNull();
 		}
@@ -23,7 +23,7 @@ public class PetRepositoryImpl implements PetRepository {
 
 	@Override
 	public List<Pet> findAllPets() {
-		String hql = "SELECT p FROM Pet p";
+		String hql = "SELECT p FROM Pet p JOIN FETCH p.owner";
 		try (Session session = sessionFactory.openSession()) {
 			return session.createSelectionQuery(hql, Pet.class).getResultList();
 		}
